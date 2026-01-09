@@ -1,0 +1,134 @@
+@use '../settings/settings' as *;
+@use '../settings/mixins' as *;
+
+.footer {
+   // display: none;
+   // .footer__body
+   &__body {}
+
+   // .footer__bottom
+   &__bottom {}
+}
+
+.body-footer {
+   @include adaptiveValue('padding-block', 80, 40);
+   // .body-footer__container
+   &__container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(min(toRem(190),100%),1fr));
+      @include adaptiveValue('column-gap', 30, 15);
+      row-gap: toRem(20);
+
+      @media (max-width: toEm(427)) {
+      //   align-items: center;
+      //   justify-items: center;
+      }
+   }
+
+   // .body-footer__column
+   &__column {}
+}
+
+.column-footer {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   gap: toRem(20);
+   // .column-footer__title
+   &__title {
+      @include adaptiveValue('font-size', 24, 18);
+      font-weight: 700;
+      color: $colorSecondary;
+      letter-spacing: toRem(0.1);
+   }
+
+   // .column-footer__text
+   &__text {
+      font-size: toRem(14);
+      font-weight: 600;
+      max-width: toRem(213);
+      line-height: 142.857143%; /* 20/14 */
+   }
+
+   // .column-footer__list
+   &__list {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: toRem(10);
+   }
+
+   // .column-footer__item
+   &__item {}
+
+   // .column-footer__link
+   &__link {
+      font-size: toRem(14);
+      font-weight: 600;
+      transition: color 0.3s;
+
+      @include hover {
+        color: $bluePrimary;
+      }
+   }
+}
+
+.social-media {
+   display: flex;
+   align-items: center;
+   gap: toRem(20);
+
+   // .social-media__item
+   &__item {}
+
+   // .social-media__link
+   &__link {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &::before {
+         color: $bluePrimary;
+         font-size: toRem(20);
+         transition: color 0.3s;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        background-color: $blueSecondary;
+        border-radius: 50%;
+        padding: toRem(10);
+        width: toRem(36);
+        aspect-ratio: 1;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+      @include hover {
+        &::before {
+         color: $white;
+        }
+        &::after {
+         opacity: 1;
+        }
+      }
+   }
+}
+
+.bottom-footer {
+   text-align: center;
+   @include adaptiveValue('padding-block', 25, 15);
+   // .bottom-footer__container
+   &__container {}
+
+   // .bottom-footer__link
+   &__link {
+
+      @include hover {
+        text-decoration: underline;
+      }
+   }
+}

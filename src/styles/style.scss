@@ -1,0 +1,124 @@
+@use "sass:math";
+// =====================Pages===========================
+
+// =====================Settings===========================
+@use './settings/settings' as *;
+@use './settings/reset';
+@use './settings/_mixins.scss' as *;
+// =====================Layouts===========================
+@use './layouts/header';
+@use './layouts/footer';
+@use './layouts/page';
+// =====================Base===========================
+@use './base/animation';
+@use './base/fonts';
+@use './base/_typography.scss';
+// ====================================================
+@use './components';
+
+
+body {
+   font-family: "Montserrat", sans-serif;
+   // @include typography("M", 400, 0);
+   line-height: 1.7;
+   color: $colorPrimary;
+
+   &.scroll-lock {
+      overflow: hidden;
+      touch-action: none;
+      overscroll-behavior: none;
+   }
+}
+
+
+.wrapper {
+   min-height: 100%;
+   display: flex;
+   flex-direction: column;
+
+   &.scroll-lock {
+         overflow: hidden;
+         touch-action: none;
+         overscroll-behavior: none;
+      }
+
+   >main {
+      flex-grow: 1;
+   }
+}
+
+[class*="__container"] {
+   max-width: toRem($containerWidth);
+   padding-inline: toRem(math.div($containerPadding, 2));
+   margin: 0 auto;
+}
+
+// ===========================================================================================
+// -----------------------------
+// data-input
+// -----------------------------
+html[data-input="mouse"] {
+   .menu-dropdown__item--submenu {
+      &:hover> {
+         .menu-dropdown__submenu {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateY(0);
+         }
+      }
+   }
+}
+html[data-input="keyboard"] {
+   >* :focus-visible {
+         outline: toRem(2) solid $black;
+         outline-offset: toRem(4);
+      }
+   .is-active {
+      .submenu-dropdowne {
+         display: block;
+      }
+   }
+}
+html[data-input="touch"] {
+   .menu-dropdown__item--submenu {
+      &.is-active {
+         .menu-dropdown__link {
+            &::before {
+               rotate: -90deg;
+            }
+         }
+      }
+   }
+}
+// ===========================================================================================
+// -----------------------------
+// accordion
+// -----------------------------
+[data-accordion-body] {
+   height: 0;
+   overflow: hidden;
+   transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+[data-accordion] {
+   &.active {
+      .header-approach__title {
+         color: $black;
+      }
+
+      .header-approach__icon {
+         span {
+            &::after {
+               rotate: -180deg;
+            }
+         }
+      }
+   }
+}
+[data-accordion-icon] {
+   .active & {
+      &::before {
+         rotate: 0deg;
+      }
+   }
+}
