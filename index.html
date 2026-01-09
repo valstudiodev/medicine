@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8" />
+   <link rel="icon" type="image/svg+xml" href="/medicine/favicon.ico" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <style>
+      /* Миттєвий фон для всього вікна */
+      html {
+         background-color: #fff;
+      }
+
+      html:not([init-page-loader="ready"]) body {
+         opacity: 0 !important;
+         overflow: hidden !important;
+         visibility: hidden !important;
+      }
+
+      html[init-page-loader="ready"] body {
+         opacity: 1 !important;
+         overflow: visible;
+         transition: opacity 0.4s ease;
+         visibility: visible !important;
+      }
+
+      /* Стиль прогрес-бару (щоб не чекати завантаження файлу CSS) */
+      #loader-progress-bar {
+         position: fixed;
+         top: 0;
+         left: 0;
+         height: 2px;
+         background-color: #23A6F0;
+         z-index: 100100;
+         width: 0%;
+         transition: width 0.4s ease, opacity 0.3s ease;
+         box-shadow: 0 0 10px #fff;
+      }
+   </style>
+   <title>Medicine</title>
+  <script type="module" crossorigin src="/medicine/assets/main.6a7067c7.js"></script>
+  <link rel="stylesheet" href="/medicine/assets/index.bc125f46.css">
+</head>
+
+<body>
+
+   <div class="wrapper">
+      <header class="header">
+         <div class="header__container">
+            <div class="header__inner">
+               <a href="#" class="header__logo">
+                  <p>Physionic</p>
+               </a>
+               <nav class="header__menu menu-header">
+                  <ul class="menu-header__list">
+                     <li class="menu-header__item">
+                        <a href="#" class="menu-header__link">Home</a>
+                     </li>
+                     <li class="menu-header__item">
+                        <a href="#" class="menu-header__link">Product</a>
+                     </li>
+                     <li class="menu-header__item">
+                        <a href="#" class="menu-header__link">Pricing</a>
+                     </li>
+                     <li class="menu-header__item">
+                        <a href="#" class="menu-header__link">Contact</a>
+                     </li>
+                  </ul>
+               </nav>
+               <button type="button" class="header__button button button--icon-arrow">Get Quote Now</button>
+               <button class="button-search button-search--icon-search"></button>
+               <button class="button-basket button-basket--icon-basket"></button>
+               <button class="icon-menu">
+                  <span></span>
+               </button>
+            </div>
+         </div>
+      </header>
+
+      <main class="page">
+
+         <section class="page__hero hero">
+            <div class="hero__container">
+               <img src="/medicine/assets/hero-img.cf7b2e99.webp" alt="hero image" class="hero__image">
+               <div class="hero__inner">
+                  <div class="hero__content content-hero">
+                     <h1 class="content-hero__title">Meet the Best Hospital</h1>
+                     <div class="content-hero__text">
+                        <p>We know how large objects will act,
+                           but things on a small scale.</p>
+                     </div>
+                     <div class="content-hero__buttons">
+                        <button type="button" class="button button--radius">Get Quote Now</button>
+                        <button type="button" class="button button--radius button--radius__white">Learn More</button>
+                     </div>
+                  </div>
+                  <article action="#" class="hero__form form-hero">
+                     <h2 class="form-hero__title">Book Appointment</h2>
+                     <form action="#" class="form-hero__form form-item">
+                        <div class="hidden-field" style="display:none;">
+                           <label>Keep this field empty</label>
+                           <input type="text" name="_gotcha">
+                        </div>
+                        <div class="form-item__wrapper">
+                           <label for="name" class="form-item__label">Name *</label>
+                           <input type="text" id="name" name="name" class="form-item__input" placeholder="Full Name * "
+                              required>
+                        </div>
+                        <div class="form-item__wrapper">
+                           <label for="email" class="form-item__label">Email address *</label>
+                           <input type="text" name="email" class="form-item__input" placeholder="example@gmail.com "
+                              required>
+                        </div>
+                        <div class="form-item__wrapper">
+                           <label for="name" class="form-item__label">Departement *</label>
+                           <div class="form-item__body">
+                              <select class="form-item__select" name="departement" id="" required>
+                                 <option class="form-item__option form-item__option--icon-shevron" value="" disabled
+                                    selected hidden>Please Select
+                                 </option>
+                                 <option value="item-01">item-01</option>
+                                 <option value="item-02">item-02</option>
+                                 <option value="item-03">item-03</option>
+                              </select>
+                              <span class="form-item__icon form-item__icon--icon-shevron"></span>
+                           </div>
+                        </div>
+                        <div class="form-item__wrapper">
+                           <label for="name" class="form-item__label">Time *</label>
+                           <div class="form-item__body">
+                              <input type="text" name="name" class="form-item__input" placeholder="4:00 Available"
+                                 required>
+                              <span class="form-item__icon form-item__icon--icon-shevron"></span>
+                           </div>
+                        </div>
+                     </form>
+                     <button type="submit" class="form-hero__button button">Book Appointment</button>
+                  </article>
+               </div>
+            </div>
+         </section>
+
+         <section class="page__leading leading">
+            <div class="leading__container">
+               <div class="leading__header header-block">
+                  <h2 class="header-block__title">Leading Medicine</h2>
+                  <div class="header-block__text">
+                     <p>Problems trying to resolve the conflict between
+                        the two major realms of Classical physics: Newtonian mechanics
+                     </p>
+                  </div>
+               </div>
+               <div class="leading__items">
+                  <article class="cart-item">
+                     <a href="#" class="cart-item__link">
+                        <div class="cart-item__top top-cart">
+                           <figure class="top-cart__icon">
+                              <svg>
+                                 <use href="/medicine/assets/symbol-defs.408748a5.svg#icon-people"></use>
+                              </svg>
+                           </figure>
+                           <figcaption class="top-cart__title">
+                              <h3>Emergency Case</h3>
+                           </figcaption>
+                        </div>
+                        <div class="cart-item__body body-cart">
+                           <ul class="body-cart__list">
+                              <li class="body-cart__item">
+                                 <p>- The best products start with Figma</p>
+                              </li>
+                              <li class="body-cart__item">
+                                 <p>- Design with real data</p>
+                              </li>
+                              <li class="body-cart__item">
+                                 <p>- Lightning fast prototyping</p>
+                              </li>
+                              <li class="body-cart__item">
+                                 <p>- Fastest way to organize</p>
+                              </li>
+                              <li class="body-cart__item">
+                                 <p>- Work at the speed of thought.</p>
+                              </li>
+                           </ul>
+                           <span class="body-cart__link">Learn More</span>
+                        </div>
+                     </a>
+                  </article>
+                  <article class="cart-item">
+                     <a href="#" class="cart-item__link">
+                        <div class="cart-item__top top-cart">
+                           <figure class="top-cart__icon">
+                              <svg>
+                                 <use href="/medicine/assets/symbol-defs.408748a5.svg#icon-people"></use>
+                              </svg>
+                           </figure>
+                           <figcaption class="top-cart__title">
+                              <h3>Cancer Care</h3>
+                           </figcaption>
+                        </div>
+                        <div class="cart-item__body body-cart">
+                           <ul class="body-cart__list">
+                              <li class="body-cart__item">
+                                 <p>- The best products start with Figma</p>
+                              </li>
+                              <li class="body-cart__item">
+                                 <p>- Design with real data</p>
+                              </li>
+                              <li class="body-cart__item">
+                                 <p>- Lightning fast prototyping</p>
+                              </li>
+                              <li class="body-cart__item">
+                                 <p>- Fastest way to organize</p>
+                              </li>
+                              <li class="body-cart__item">
+                                 <p>- Work at the speed of thought.</p>
+                              </li>
+                           </ul>
+                           <span class="body-cart__link">Learn More</span>
+                        </div>
+                     </a>
+                  </article>
+                  <article class="cart-item">
+                     <a href="#" class="cart-item__link">
+                        <div class="cart-item__top top-cart">
+                           <figure class="top-cart__icon">
+                              <svg>
+                                 <use href="/medicine/assets/symbol-defs.408748a5.svg#icon-people"></use>
+                              </svg>
+                           </figure>
+                           <figcaption class="top-cart__title">
+                              <h3>Health Queries</h3>
+                           </figcaption>
+                        </div>
+                        <div class="cart-item__body body-cart">
+                           <ul class="body-cart__list">
+                              <li class="body-cart__item">
+                                 <p>- The best products start with Figma</p>
+                              </li>
+                              <li class="body-cart__item">
+                                 <p>- Design with real data</p>
+                              </li>
+                              <li class="body-cart__item">
+                                 <p>- Lightning fast prototyping</p>
+                              </li>
+                              <li class="body-cart__item">
+                                 <p>- Fastest way to organize</p>
+                              </li>
+                              <li class="body-cart__item">
+                                 <p>- Work at the speed of thought.</p>
+                              </li>
+                           </ul>
+                           <span class="body-cart__link">Learn More</span>
+                        </div>
+                     </a>
+                  </article>
+               </div>
+            </div>
+         </section>
+
+         <!-- reviews -->
+
+         <section class="page__faq faq">
+            <div class="faq__container">
+               <div class="faq__header header-block">
+                  <h2 class="header-block__title">FAQ</h2>
+                  <div class="header-block__text">
+                     <p>Problems trying to resolve the conflict between
+                        the two major realms of Classical physics: Newtonian mechanics
+                     </p>
+                  </div>
+               </div>
+               <div class="faq__items">
+                  <article class="faq-item" data-accordion>
+                     <div class="faq-item__wrap">
+                        <div class="faq-item__top" data-accordion-btn>
+                           <h4 class="faq-item__title">the quick fox jumps over the
+                              lazy dog
+                           </h4>
+                           <span class="faq-item__icon faq-item__icon--icon-shevron" data-accordion-icon></span>
+                        </div>
+                        <div class="faq-item__body" data-accordion-body>
+                           <div class="faq-item__text">
+                              <p>Things on a very small scale
+                                 behave like nothing
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                  </article>
+                  <article class="faq-item" data-accordion>
+                     <div class="faq-item__wrap">
+                        <div class="faq-item__top" data-accordion-btn>
+                           <h4 class="faq-item__title">the quick fox jumps over the
+                              lazy dog
+                           </h4>
+                           <span class="faq-item__icon faq-item__icon--icon-shevron" data-accordion-icon></span>
+                        </div>
+                        <div class="faq-item__body" data-accordion-body>
+                           <div class="faq-item__text">
+                              <p>Things on a very small scale
+                                 behave like nothing
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                  </article>
+                  <article class="faq-item" data-accordion>
+                     <div class="faq-item__wrap">
+                        <div class="faq-item__top" data-accordion-btn>
+                           <h4 class="faq-item__title">the quick fox jumps over the
+                              lazy dog
+                           </h4>
+                           <span class="faq-item__icon faq-item__icon--icon-shevron" data-accordion-icon></span>
+                        </div>
+                        <div class="faq-item__body" data-accordion-body>
+                           <div class="faq-item__text">
+                              <p>Things on a very small scale
+                                 behave like nothing
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                  </article>
+                  <article class="faq-item" data-accordion>
+                     <div class="faq-item__wrap">
+                        <div class="faq-item__top" data-accordion-btn>
+                           <h4 class="faq-item__title">the quick fox jumps over the
+                              lazy dog
+                           </h4>
+                           <span class="faq-item__icon faq-item__icon--icon-shevron" data-accordion-icon></span>
+                        </div>
+                        <div class="faq-item__body" data-accordion-body>
+                           <div class="faq-item__text">
+                              <p>Things on a very small scale
+                                 behave like nothing
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                  </article>
+                  <article class="faq-item" data-accordion>
+                     <div class="faq-item__wrap">
+                        <div class="faq-item__top" data-accordion-btn>
+                           <h4 class="faq-item__title">the quick fox jumps over the
+                              lazy dog
+                           </h4>
+                           <span class="faq-item__icon faq-item__icon--icon-shevron" data-accordion-icon></span>
+                        </div>
+                        <div class="faq-item__body" data-accordion-body>
+                           <div class="faq-item__text">
+                              <p>Things on a very small scale
+                                 behave like nothing
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                  </article>
+                  <article class="faq-item" data-accordion>
+                     <div class="faq-item__wrap">
+                        <div class="faq-item__top" data-accordion-btn>
+                           <h4 class="faq-item__title">the quick fox jumps over the
+                              lazy dog
+                           </h4>
+                           <span class="faq-item__icon faq-item__icon--icon-shevron" data-accordion-icon></span>
+                        </div>
+                        <div class="faq-item__body" data-accordion-body>
+                           <div class="faq-item__text">
+                              <p>Things on a very small scale
+                                 behave like nothing
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                  </article>
+                  <article class="faq-item" data-accordion>
+                     <div class="faq-item__wrap">
+                        <div class="faq-item__top" data-accordion-btn>
+                           <h4 class="faq-item__title">the quick fox jumps over the
+                              lazy dog
+                           </h4>
+                           <span class="faq-item__icon faq-item__icon--icon-shevron" data-accordion-icon></span>
+                        </div>
+                        <div class="faq-item__body" data-accordion-body>
+                           <div class="faq-item__text">
+                              <p>Things on a very small scale
+                                 behave like nothing
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                  </article>
+                  <article class="faq-item" data-accordion>
+                     <div class="faq-item__wrap">
+                        <div class="faq-item__top" data-accordion-btn>
+                           <h4 class="faq-item__title">the quick fox jumps over the
+                              lazy dog
+                           </h4>
+                           <span class="faq-item__icon faq-item__icon--icon-shevron" data-accordion-icon></span>
+                        </div>
+                        <div class="faq-item__body" data-accordion-body>
+                           <div class="faq-item__text">
+                              <p>Things on a very small scale
+                                 behave like nothing
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                  </article>
+                  <article class="faq-item" data-accordion>
+                     <div class="faq-item__wrap">
+                        <div class="faq-item__top" data-accordion-btn>
+                           <h4 class="faq-item__title">the quick fox jumps over the
+                              lazy dog
+                           </h4>
+                           <span class="faq-item__icon faq-item__icon--icon-shevron" data-accordion-icon></span>
+                        </div>
+                        <div class="faq-item__body" data-accordion-body>
+                           <div class="faq-item__text">
+                              <p>Things on a very small scale
+                                 behave like nothing
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                  </article>
+               </div>
+            </div>
+         </section>
+
+         <section class="page__pricing pricing">
+            <div class="pricing__container">
+               <div class="pricing__header header-block">
+                  <h2 class="header-block__title">Leading Medicine</h2>
+                  <div class="header-block__text">
+                     <p>Problems trying to resolve the conflict between
+                        the two major realms of Classical physics: Newtonian mechanics
+                     </p>
+                  </div>
+               </div>
+               <div class="pricing__items">
+                  <article class="item-pricing">
+                     <div class="item-pricing__top top-pricing">
+                        <h4 class="top-pricing__title">FREE</h4>
+                        <div class="top-pricing__desc">
+                           <p>Organize across all
+                              apps by hand</p>
+                        </div>
+                        <div class="top-pricing__price price">
+                           <span class="price__amount">0</span>
+                           <div class="price__wrap">
+                              <span class="price__sign">$</span>
+                              <span class="price__text">Per Month</span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="item-pricing__body body-pricing">
+                        <ul class="body-pricing__list">
+                           <li class="body-pricing__item body-pricing__item--icon-check">
+                              Unlimited product updates
+                           </li>
+                           <li class="body-pricing__item body-pricing__item--icon-check">
+                              Unlimited product updates
+                           </li>
+                           <li class="body-pricing__item body-pricing__item--icon-check">
+                              Unlimited product updates
+                           </li>
+                           <li class="body-pricing__item body-pricing__item--icon-check">
+                              1GB Cloud storage
+                           </li>
+                           <li class="body-pricing__item body-pricing__item--icon-check">
+                              Email and community support
+                           </li>
+                        </ul>
+                     </div>
+                     <button type="button" class="item-pricing__button button">Try for free</button>
+                  </article>
+                  <article class="item-pricing item-pricing--dark">
+                     <div class="item-pricing__top top-pricing">
+                        <h4 class="top-pricing__title">STANDARD</h4>
+                        <div class="top-pricing__desc">
+                           <p>Organize across all
+                              apps by hand</p>
+                        </div>
+                        <div class="top-pricing__price price">
+                           <span class="price__amount">9.99</span>
+                           <div class="price__wrap">
+                              <span class="price__sign">$</span>
+                              <span class="price__text">Per Month</span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="item-pricing__body body-pricing">
+                        <ul class="body-pricing__list">
+                           <li class="body-pricing__item body-pricing__item--icon-check">
+                              Unlimited product updates
+                           </li>
+                           <li class="body-pricing__item body-pricing__item--icon-check">
+                              Unlimited product updates
+                           </li>
+                           <li class="body-pricing__item body-pricing__item--icon-check">
+                              Unlimited product updates
+                           </li>
+                           <li class="body-pricing__item body-pricing__item--icon-check">
+                              1GB Cloud storage
+                           </li>
+                           <li class="body-pricing__item body-pricing__item--icon-check">
+                              Email and community support
+                           </li>
+                        </ul>
+                     </div>
+                     <button type="button" class="item-pricing__button button">Try for free</button>
+                  </article>
+                  <article class="item-pricing">
+                     <div class="item-pricing__top top-pricing">
+                        <h4 class="top-pricing__title">FREE</h4>
+                        <div class="top-pricing__desc">
+                           <p>Organize across all
+                              apps by hand</p>
+                        </div>
+                        <div class="top-pricing__price price">
+                           <span class="price__amount">0</span>
+                           <div class="price__wrap">
+                              <span class="price__sign">$</span>
+                              <span class="price__text">Per Month</span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="item-pricing__body body-pricing">
+                        <ul class="body-pricing__list">
+                           <li class="body-pricing__item body-pricing__item--icon-check">
+                              Unlimited product updates
+                           </li>
+                           <li class="body-pricing__item body-pricing__item--icon-check">
+                              Unlimited product updates
+                           </li>
+                           <li class="body-pricing__item body-pricing__item--icon-check">
+                              Unlimited product updates
+                           </li>
+                           <li class="body-pricing__item body-pricing__item--icon-check">
+                              1GB Cloud storage
+                           </li>
+                           <li class="body-pricing__item body-pricing__item--icon-check">
+                              Email and community support
+                           </li>
+                        </ul>
+                     </div>
+                     <button type="button" class="item-pricing__button button">Try for free</button>
+                  </article>
+               </div>
+         </section>
+      </main>
+
+      <footer class="footer">
+         <div class="footer__body body-footer">
+            <div class="body-footer__container">
+               <div class="body-footer__column column-footer">
+                  <h4 class="column-footer__title">Get In Touch</h4>
+                  <div class="column-footer__text">
+                     <p>the quick fox jumps over the
+                        lazy dog</p>
+                  </div>
+                  <ul class="column-footer__social social-media">
+                     <li class="social-media__item">
+                        <a href="#" class="social-media__link social-media__link--icon-fb"></a>
+                     </li>
+                     <li class="social-media__item">
+                        <a href="#" class="social-media__link social-media__link--icon-instagram"></a>
+                     </li>
+                     <li class="social-media__item">
+                        <a href="#" class="social-media__link social-media__link--icon-twitter"></a>
+                     </li>
+                  </ul>
+               </div>
+               <div class="body-footer__column column-footer">
+                  <h4 class="column-footer__title">Company info</h4>
+                  <ul class="column-footer__list">
+                     <li class="column-footer__item">
+                        <a href="#" class="column-footer__link">About Us</a>
+                     </li>
+                     <li class="column-footer__item">
+                        <a href="#" class="column-footer__link">Carrier</a>
+                     </li>
+                     <li class="column-footer__item">
+                        <a href="#" class="column-footer__link">We are hiring</a>
+                     </li>
+                     <li class="column-footer__item">
+                        <a href="#" class="column-footer__link">Blog</a>
+                     </li>
+                  </ul>
+               </div>
+               <div class="body-footer__column column-footer">
+                  <h4 class="column-footer__title">Features</h4>
+                  <ul class="column-footer__list">
+                     <li class="column-footer__item">
+                        <a href="#" class="column-footer__link">Business Marketing</a>
+                     </li>
+                     <li class="column-footer__item">
+                        <a href="#" class="column-footer__link">User Analytic</a>
+                     </li>
+                     <li class="column-footer__item">
+                        <a href="#" class="column-footer__link">Live Chat</a>
+                     </li>
+                     <li class="column-footer__item">
+                        <a href="#" class="column-footer__link">Unlimited Support</a>
+                     </li>
+                  </ul>
+               </div>
+               <div class="body-footer__column column-footer">
+                  <h4 class="column-footer__title">Resources</h4>
+                  <ul class="column-footer__list">
+                     <li class="column-footer__item">
+                        <a href="#" class="column-footer__link">IOS & Android</a>
+                     </li>
+                     <li class="column-footer__item">
+                        <a href="#" class="column-footer__link">Watch a Demo</a>
+                     </li>
+                     <li class="column-footer__item">
+                        <a href="#" class="column-footer__link">Customers</a>
+                     </li>
+                     <li class="column-footer__item">
+                        <a href="#" class="column-footer__link">API</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="footer__bottom bottom-footer">
+            <div class="bottom-footer__container">
+               <a href="#" class="bottom-footer__link">
+                  <p>Made With Love By Figmaland All Right Reserved</p>
+               </a>
+            </div>
+         </div>
+      </footer>
+   </div>
+
+
+   <div id="app"></div>
+   
+</body>
+
+</html>
