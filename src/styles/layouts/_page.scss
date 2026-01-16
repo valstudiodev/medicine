@@ -183,6 +183,8 @@
       display: flex;
       align-items: center;
       width: 100%;
+      // border: toRem(1) solid $borderColor;
+      // overflow: hidden;
 
       &:focus-within {
          .form-item__icon {
@@ -212,7 +214,7 @@
    }
 
    &__select {
-      border: toRem(1) solid $borderColor;
+      border: toRem(2) solid $borderColor;
       padding-block: toRem(11);
       padding-left: toRem(21);
       border-radius: toRem(5);
@@ -292,6 +294,7 @@ input[type="time"] {
 
 .booking-container {
    position: relative;
+   width: 100%;
 
    &__label {
       font-size: toRem(14);
@@ -305,15 +308,16 @@ input[type="time"] {
       display: flex;
       align-items: center;
       margin-top: toRem(10);
+      height: toRem(50);
 
       .form-item__icon {
-         translate: 0 0;
+         translate: 0 toRem(3);
       }
 
       &:focus-within {
          .form-item__icon {
             &::before {
-               transform: translateY(-50%) rotate(180deg);
+               transform: translateY(0) rotate(180deg);
             }
          }
       }
@@ -378,7 +382,6 @@ input[type="text"]:focus {
    color: #ccc;
    cursor: not-allowed;
 }
-
 
 
 // ===========================================================================================

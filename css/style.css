@@ -839,7 +839,7 @@ html[data-input=mouse] .bottom-footer__link:hover {
   will-change: rotate;
 }
 .form-item__select {
-  border: 0.0625rem solid rgb(221, 221, 221);
+  border: 0.125rem solid rgb(221, 221, 221);
   padding-block: 0.6875rem;
   padding-left: 1.3125rem;
   border-radius: 0.3125rem;
@@ -954,6 +954,7 @@ input[type=time] {
 
 .booking-container {
   position: relative;
+  width: 100%;
 }
 .booking-container__label {
   font-size: 0.875rem;
@@ -970,14 +971,15 @@ input[type=time] {
       -ms-flex-align: center;
           align-items: center;
   margin-top: 0.625rem;
+  height: 3.125rem;
 }
 .booking-container__inner .form-item__icon {
-  translate: 0 0;
+  translate: 0 0.1875rem;
 }
 .booking-container__inner:focus-within .form-item__icon::before {
-  -webkit-transform: translateY(-50%) rotate(180deg);
-      -ms-transform: translateY(-50%) rotate(180deg);
-          transform: translateY(-50%) rotate(180deg);
+  -webkit-transform: translateY(0) rotate(180deg);
+      -ms-transform: translateY(0) rotate(180deg);
+          transform: translateY(0) rotate(180deg);
 }
 
 input[type=text] {
