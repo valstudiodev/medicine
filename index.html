@@ -39,8 +39,8 @@
       }
    </style>
    <title>Medicine</title>
-  <script type="module" crossorigin src="/medicine/assets/main.f6fa5794.js"></script>
-  <link rel="stylesheet" href="/medicine/assets/index.c32ac375.css">
+  <script type="module" crossorigin src="/medicine/assets/main.8015adb7.js"></script>
+  <link rel="stylesheet" href="/medicine/assets/index.cc443883.css">
 </head>
 
 <body>
@@ -92,12 +92,12 @@
                      </div>
                      <div class="content-hero__buttons">
                         <button type="button" class="button button--radius">Get Quote Now</button>
-                        <button type="button" class="button button--radius button--radius__white">Learn More</button>
+                        <button type="button" class="button button--radius button--radius-white">Learn More</button>
                      </div>
                   </div>
                   <article action="#" class="hero__form form-hero">
                      <h2 class="form-hero__title">Book Appointment</h2>
-                     <form action="#" class="form-hero__form form-item">
+                     <form action="#" method="post" class="form-hero__form form-item">
                         <div class="hidden-field" style="display:none;">
                            <label>Keep this field empty</label>
                            <input type="text" name="_gotcha">
@@ -109,33 +109,42 @@
                         </div>
                         <div class="form-item__wrapper">
                            <label for="email" class="form-item__label">Email address *</label>
-                           <input type="text" name="email" class="form-item__input" placeholder="example@gmail.com "
-                              required>
+                           <input type="text" name="email" id="email" class="form-item__input"
+                              placeholder="example@gmail.com " required>
                         </div>
                         <div class="form-item__wrapper">
-                           <label for="name" class="form-item__label">Departement *</label>
+                           <label for="departement" class="form-item__label">Departement *</label>
                            <div class="form-item__body">
-                              <select class="form-item__select" name="departement" id="" required>
+                              <select class="form-item__select" name="departement" id="departement" required>
                                  <option class="form-item__option form-item__option--icon-shevron" value="" disabled
                                     selected hidden>Please Select
                                  </option>
-                                 <option value="item-01">item-01</option>
-                                 <option value="item-02">item-02</option>
-                                 <option value="item-03">item-03</option>
+                                 <option value="item-01">Emergency Department</option>
+                                 <option value="item-02">Cardiology</option>
+                                 <option value="item-03">Pediatrics</option>
+                                 <option value="item-02">Surgery</option>
+                                 <option value="item-02">Neurology</option>
                               </select>
                               <span class="form-item__icon form-item__icon--icon-shevron"></span>
                            </div>
                         </div>
                         <div class="form-item__wrapper">
-                           <label for="name" class="form-item__label">Time *</label>
-                           <div class="form-item__body">
-                              <input type="text" name="name" class="form-item__input" placeholder="4:00 Available"
-                                 required>
-                              <span class="form-item__icon form-item__icon--icon-shevron"></span>
+                           <div class="booking-container">
+                              <label class="booking-container__label" for="appointment">Time *</label>
+                              <div class="booking-container__inner">
+                                 <input type="text" name="appointment" id="appointment" placeholder="4:00 Available"
+                                    readonly required>
+                                 <span class="form-item__icon form-item__icon--icon-shevron"></span>
+                              </div>
+                              <div id="slots-dropdown" class="slots-dropdown">
+                                 <div class="slots-grid" id="slots-grid">
+                                 </div>
+                              </div>
                            </div>
+                           <input type="hidden" name="selected_time" id="final-time">
                         </div>
+                        <button type="submit" class="form-hero__button button">Book Appointment</button>
                      </form>
-                     <button type="submit" class="form-hero__button button">Book Appointment</button>
                   </article>
                </div>
             </div>
@@ -261,10 +270,13 @@
          <section class="page__reviews reviews">
             <div class="reviews__container">
                <div class="reviews__header header-block">
-                  <h2 class="header-block__title">Leading Medicine</h2>
+                  <h2 class="header-block__title">What
+                     Clients Say</h2>
                   <div class="header-block__text">
-                     <p>Problems trying to resolve the conflict between
-                        the two major realms of Classical physics: Newtonian mechanics
+                     <p>Problems trying to resolve
+                        the conflict between the two major
+                        realms of Classical physics:
+                        Newtonian mechanics
                      </p>
                   </div>
                </div>
@@ -699,7 +711,7 @@
                <div class="subscribe__form form-subscribe">
                   <form action="#" class="form-subscribe__form">
                      <input type="email" class="form-subscribe__input" placeholder="Your Email">
-                     <button type="button" class="form-subscribe__button button">Subscribe</button>
+                     <button type="submit" class="form-subscribe__button button">Subscribe</button>
                   </form>
                </div>
             </div>
