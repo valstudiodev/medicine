@@ -214,6 +214,7 @@
    }
 
    &__select {
+      font-family: "Montserrat",sans-serif;
       border: toRem(2) solid $borderColor;
       padding-block: toRem(11);
       padding-left: toRem(21);
@@ -225,6 +226,8 @@
       outline: none;
       cursor: pointer;
       background-color: $white;
+      font-size: toRem(14);
+      letter-spacing: toRem(0.2);
 
       option {
          color: $black;
@@ -327,11 +330,11 @@ input[type="time"] {
 input[type="text"] {
    width: 100%;
    padding: 12px;
-   border: 2px solid #e0e0e0;
+   border: toRem(1) solid #e0e0e0;
    border-radius: 8px;
    cursor: pointer;
    background-color: #fff;
-   transition: border-color 0.3s;
+   transition: border-color 0.4s;
 }
 
 input[type="text"]:focus {
