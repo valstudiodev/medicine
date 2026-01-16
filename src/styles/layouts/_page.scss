@@ -548,7 +548,8 @@ input[type="text"]:focus {
 }
 
 .form-subscribe {
-   flex-basis: toRem(386);
+   // flex-basis: toRem(386);
+   max-width: toRem(386);
    width: 100%;
 
    @media (max-width: toEm(695)) {

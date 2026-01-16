@@ -1312,8 +1312,7 @@ input[type=text]:focus {
 }
 
 .form-subscribe {
-  -ms-flex-preferred-size: 24.125rem;
-      flex-basis: 24.125rem;
+  max-width: 24.125rem;
   width: 100%;
 }
 @media (max-width: 43.4375em) {
