@@ -172,7 +172,7 @@
    font-size: toRem(24);
    z-index: 20;
    color: $white;
-   @media (min-width: toEm(414)) {
+   @media (min-width: toEm(745.98)) {
      display: none;
    }
 }
@@ -497,3 +497,24 @@
    }
 }
 
+
+.rating {
+
+   // .rating__items
+   &__items {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: toRem(5);
+   }
+
+   // .rating__item
+   &__item {
+      appearance: none;
+
+      &::before {
+         color: $colorGold;
+         font-size: toRem(20);
+      }
+   }
+}

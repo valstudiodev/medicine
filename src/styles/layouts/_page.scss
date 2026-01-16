@@ -24,6 +24,16 @@
    &__pricing {
       @include adaptiveValue('padding-block', 112, 50);
    }
+
+   // .page__subscribe
+   &__subscribe {
+      @include adaptiveValue('padding-block', 80, 50);
+   }
+
+   // .page__reviews
+   &__reviews {
+      @include adaptiveValue('padding-block', 112, 50);
+   }
 }
 
 
@@ -32,11 +42,7 @@
 // hero
 // -----------------------------
 .hero {
-   // display: none;
    position: relative;
-
-   // .hero__container
-   &__container {}
 
    &__inner {
       display: flex;
@@ -73,21 +79,7 @@
       height: 100%;
       object-fit: cover;
       object-position: left top;
-
-      @media (max-width: toEm(780)) {
-        transform: scaleX(-1);
-        top: 0;
-        right: 0;
-        object-position: top ;
-        width: 100vw;
-      }
    }
-
-   // .hero__content
-   &__content {}
-
-   // .hero__form
-   &__form {}
 }
 
 .content-hero {
@@ -155,9 +147,6 @@
       color: $colorSecondary;
       letter-spacing: toRem(0.1);
    }
-
-   // .form-hero__form
-   &__form {}
 
    // .form-hero__button
    &__button {
@@ -284,7 +273,6 @@
 // hero
 // -----------------------------
 .leading {
-   // display: none;
    // .leading__container
    &__container {}
 
@@ -307,7 +295,6 @@
 // faq
 // -----------------------------
 .faq {
-   // display: none;
    // .faq__container
    &__container {}
 
@@ -331,7 +318,6 @@
 // pricing
 // -----------------------------
 .pricing {
-
    // .pricing__container
    &__container {}
 
@@ -349,6 +335,160 @@
    }
 }
 
+// ===========================================================================================
+// -----------------------------
+// reviews
+// -----------------------------
+.reviews {
 
+   // .reviews__container
+   &__container {}
+
+   // .reviews__header
+   &__header {
+      @include adaptiveValue('margin-bottom', 80, 30);
+   }
+
+   // .reviews__body
+   &__body {}
+}
+
+
+.body-reviews {
+
+   // .body-reviews__text
+   &__text {
+      @include adaptiveValue('font-size', 14, 12);
+      font-weight: 600;
+      max-width: toRem(234);
+   }
+
+   // .body-reviews__author
+   &__author {
+      aspect-ratio: 1;
+      width: toRem(50);
+   }
+}
+
+.item-review {
+   background-color: $white;
+   border: toRem(1) solid $borderColor;
+   border-radius: toRem(5);
+   // .item-review__inner
+   &__inner {
+      padding-block: toRem(30);
+      padding-inline: toRem(35);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: toRem(20);
+   }
+
+   // .item-review__rating
+   &__rating {}
+}
+
+// ===========================================================================================
+// -----------------------------
+// subscribe
+// -----------------------------
+.subscribe {
+   background-color: $colorSecondary;
+
+   // .subscribe__container
+   &__container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @include adaptiveValue('gap',50,20);
+
+      @media (max-width: toEm(695)) {
+        flex-direction: column;
+      }
+   }
+}
+
+.content-subscribe {
+   // .content-subscribe__title
+   &__title {
+      @include adaptiveValue('font-size', 40, 32);
+      font-weight: 700;
+      letter-spacing: toRem(0.2);
+      line-height: 142.5%; /* 57/40 */
+      color: $white;
+   }
+
+   // .content-subscribe__text
+   &__text {
+      font-size: toRem(14);
+      font-weight: 500;
+      letter-spacing: toRem(0.2);
+      line-height: 142.857143%; /* 20/14 */
+      max-width: toRem(440);
+      color: $white;
+   }
+}
+
+.form-subscribe {
+   flex-basis: toRem(386);
+
+   @media (max-width: toEm(695)) {
+     flex-basis: 100%;
+     width: 100%;
+   }
+
+   // .form-subscribe__form
+   &__form {
+      display: flex;
+      border-radius: toRem(5);
+
+      @media (max-width: toEm(420)) {
+        flex-direction: column;
+        gap: toRem(10);
+      }
+   }
+
+   // .form-subscribe__input
+   &__input {
+      background-color: $white;
+      border-radius: toRem(5) toRem(0) toRem(0) toRem(5);
+      padding-block: toRem(15);
+      padding-left: toRem(20);
+      font-size: toRem(14);
+      letter-spacing: toRem(0.2);
+      transition: outline-offset 0.4s ;
+      &::placeholder {
+         transition: opacity 0.3s;
+         opacity: 1;
+      }
+
+      &:focus {
+         &::placeholder {
+            opacity: 0;
+         }
+      }
+
+      &:focus-visible {
+         // outline: none;
+         outline-offset: toRem(4);
+      }
+
+      @media (max-width: toEm(420)) {
+         border-radius: toRem(5);
+      }
+   }
+
+   // .form-subscribe__button
+   &__button {
+
+      @media (min-width: toEm(420)) {
+         padding-inline: toRem(22);
+
+         &.button {
+            border-radius: toRem(0) toRem(5) toRem(5) toRem(0);
+         }
+      }
+   }
+}
 
 

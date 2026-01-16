@@ -65,7 +65,7 @@
    }
 
    &__button {
-      @media (max-width: toEm(414)) {
+      @media (max-width: toEm(650)) {
         display: none !important;
       }
    }
@@ -83,6 +83,7 @@
       background-color: $white;
       padding: toRem(164) toRem(15) toRem(30) toRem(15);
       transition: all 0.3s;
+      overflow-y: auto;
 
       .menu-open & {
          right: 0;
