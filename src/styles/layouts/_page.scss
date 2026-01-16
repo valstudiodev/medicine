@@ -216,7 +216,7 @@
 
    &__select {
       font-family: "Montserrat",sans-serif;
-      border: toRem(1) solid $borderColor;
+      outline: toRem(1) solid $borderColor;
       padding-block: toRem(11);
       padding-left: toRem(21);
       border-radius: toRem(5);
@@ -232,12 +232,10 @@
 
       option {
          color: $black;
-         font-weight: 500;
+      }
 
-
-         &:not(last-child) {
-            margin-bottom: toRem(20);
-         }
+      &::placeholder {
+         font-family: "Montserrat", sans-serif;
       }
 
       &:valid  {
@@ -262,11 +260,10 @@
 
    // .form-item__input
    &__input {
-      border: toRem(1) solid $borderColor;
+      outline: toRem(1) solid $borderColor;
       padding-block: toRem(11);
       padding-left: toRem(21);
       border-radius: toRem(5);
-      outline: none;
       transition: box-shadow 0.3s ease, border 0.4s, opacity 0.4s;
       appearance: none;
       height: toRem(50);
@@ -284,7 +281,7 @@
          }
       }
       &:focus-visible {
-         border: toRem(1) solid $bluePrimary;
+         outline: toRem(1) solid $bluePrimary;
          box-shadow: 0 0 0 2px rgba(221, 221, 221, 0.5);
       }
    }

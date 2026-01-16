@@ -73,9 +73,9 @@ html[data-input="mouse"] {
 html[data-input="keyboard"] {
 
    >* :focus-visible {
-         outline: toRem(1) solid #0077ff;
-         box-shadow: 0 0 0 2px rgba(0, 119, 255, 0.2);
-         outline-offset: toRem(2);
+         // outline: toRem(1) solid #0077ff;
+         // box-shadow: 0 0 0 2px rgba(0, 119, 255, 0.2);
+         // outline-offset: toRem(2);
    }
    .is-active {
       .submenu-dropdowne {

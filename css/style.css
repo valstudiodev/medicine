@@ -851,7 +851,7 @@ html[data-input=mouse] .bottom-footer__link:hover {
 }
 .form-item__select {
   font-family: "Montserrat", sans-serif;
-  border: 0.0625rem solid rgb(221, 221, 221);
+  outline: 0.0625rem solid rgb(221, 221, 221);
   padding-block: 0.6875rem;
   padding-left: 1.3125rem;
   border-radius: 0.3125rem;
@@ -869,10 +869,21 @@ html[data-input=mouse] .bottom-footer__link:hover {
 }
 .form-item__select option {
   color: #000;
-  font-weight: 500;
 }
-.form-item__select option:not(last-child) {
-  margin-bottom: 1.25rem;
+.form-item__select::-webkit-input-placeholder {
+  font-family: "Montserrat", sans-serif;
+}
+.form-item__select::-moz-placeholder {
+  font-family: "Montserrat", sans-serif;
+}
+.form-item__select:-ms-input-placeholder {
+  font-family: "Montserrat", sans-serif;
+}
+.form-item__select::-ms-input-placeholder {
+  font-family: "Montserrat", sans-serif;
+}
+.form-item__select::placeholder {
+  font-family: "Montserrat", sans-serif;
 }
 .form-item__select:valid .form-item__icon::before {
   rotate: 180deg;
@@ -888,11 +899,10 @@ html[data-input=mouse] .bottom-footer__link:hover {
   letter-spacing: 0.0125rem;
 }
 .form-item__input {
-  border: 0.0625rem solid rgb(221, 221, 221);
+  outline: 0.0625rem solid rgb(221, 221, 221);
   padding-block: 0.6875rem;
   padding-left: 1.3125rem;
   border-radius: 0.3125rem;
-  outline: none;
   -webkit-transition: border 0.4s, opacity 0.4s, -webkit-box-shadow 0.3s ease;
   transition: border 0.4s, opacity 0.4s, -webkit-box-shadow 0.3s ease;
   transition: box-shadow 0.3s ease, border 0.4s, opacity 0.4s;
@@ -954,7 +964,7 @@ html[data-input=mouse] .bottom-footer__link:hover {
   opacity: 0;
 }
 .form-item__input:focus-visible {
-  border: 0.0625rem solid rgb(35, 166, 240);
+  outline: 0.0625rem solid rgb(35, 166, 240);
   -webkit-box-shadow: 0 0 0 2px rgba(221, 221, 221, 0.5);
           box-shadow: 0 0 0 2px rgba(221, 221, 221, 0.5);
 }
@@ -2370,12 +2380,6 @@ html[data-input=mouse] .menu-dropdown__item--submenu:hover > .menu-dropdown__sub
           transform: translateY(0);
 }
 
-html[data-input=keyboard] > * :focus-visible {
-  outline: 0.0625rem solid #0077ff;
-  -webkit-box-shadow: 0 0 0 2px rgba(0, 119, 255, 0.2);
-          box-shadow: 0 0 0 2px rgba(0, 119, 255, 0.2);
-  outline-offset: 0.125rem;
-}
 html[data-input=keyboard] .is-active .submenu-dropdowne {
   display: block;
 }
