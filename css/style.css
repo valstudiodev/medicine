@@ -315,6 +315,12 @@ html[data-input=mouse] .menu-header__link:hover {
             column-gap: 15px;
   }
 }
+@media (max-width: 31.25em) {
+  .body-footer__container {
+    justify-items: center;
+    grid-template-columns: auto;
+  }
+}
 .column-footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -327,6 +333,11 @@ html[data-input=mouse] .menu-header__link:hover {
       -ms-flex-align: start;
           align-items: flex-start;
   gap: 1.25rem;
+}
+@media (max-width: 31.25em) {
+  .column-footer {
+    width: 51.64%;
+  }
 }
 .column-footer__title {
   font-weight: 700;
