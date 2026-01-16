@@ -151,6 +151,7 @@
    // .form-hero__button
    &__button {
       width: 100%;
+      margin-top: toRem(30);
    }
 }
 
@@ -217,9 +218,21 @@
       border-radius: toRem(5);
       width: 100%;
       appearance: none;
+      height: toRem(50);
       color: $colorPrimary;
       outline: none;
       cursor: pointer;
+      background-color: $white;
+
+      option {
+         color: $black;
+         font-weight: 500;
+
+
+         &:not(last-child) {
+            margin-bottom: toRem(20);
+         }
+      }
 
       &:valid  {
          .form-item__icon {
@@ -248,7 +261,10 @@
       padding-left: toRem(21);
       border-radius: toRem(5);
       outline: none;
-      transition: box-shadow 0.3s ease, border 0.4s;
+      transition: box-shadow 0.3s ease, border 0.4s, opacity 0.4s;
+      appearance: none;
+      height: toRem(50);
+      font-size: toRem(14);
 
       &::placeholder {
          font-size: toRem(14);
@@ -267,6 +283,103 @@
       }
    }
 }
+
+
+input[type="time"] {
+   appearance: none;
+   padding-right: toRem(15)
+}
+
+.booking-container {
+   position: relative;
+
+   &__label {
+      font-size: toRem(14);
+      font-weight: 600;
+      letter-spacing: toRem(0.2);
+      color: $colorSecondary;
+      margin-bottom: toRem(12);
+   }
+
+   &__inner {
+      display: flex;
+      align-items: center;
+      margin-top: toRem(10);
+
+      .form-item__icon {
+         translate: 0 0;
+      }
+
+      &:focus-within {
+         .form-item__icon {
+            &::before {
+               transform: translateY(-50%) rotate(180deg);
+            }
+         }
+      }
+   }
+}
+
+input[type="text"] {
+   width: 100%;
+   padding: 12px;
+   border: 2px solid #e0e0e0;
+   border-radius: 8px;
+   cursor: pointer;
+   background-color: #fff;
+   transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+   border-color: #007bff;
+   outline: none;
+}
+
+.slots-dropdown {
+   display: none;
+   /* Приховано за замовчуванням */
+   position: absolute;
+   top: 110%;
+   left: 0;
+   width: 100%;
+   background: white;
+   border-radius: 12px;
+   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+   padding: 15px;
+   z-index: 100;
+   border: 1px solid #eee;
+}
+
+.slots-grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: toRem(3);
+}
+
+.slot-btn {
+   padding: toRem(4);
+   border: 1px solid #007bff;
+   background: transparent;
+   color: #007bff;
+   border-radius: 6px;
+   cursor: pointer;
+   text-align: center;
+   font-weight: 500;
+   transition: all 0.2s;
+}
+
+.slot-btn:hover {
+   background: #007bff;
+   color: white;
+}
+
+.slot-btn.busy {
+   border-color: #ccc;
+   color: #ccc;
+   cursor: not-allowed;
+}
+
+
 
 // ===========================================================================================
 // -----------------------------
@@ -353,7 +466,6 @@
    &__body {}
 }
 
-
 .body-reviews {
 
    // .body-reviews__text
@@ -431,6 +543,7 @@
 
 .form-subscribe {
    flex-basis: toRem(386);
+   width: 100%;
 
    @media (max-width: toEm(695)) {
      flex-basis: 100%;
@@ -441,6 +554,13 @@
    &__form {
       display: flex;
       border-radius: toRem(5);
+      transition: outline-offset 0.4s;
+
+      &:focus-within {
+         outline: toRem(2) solid #0077ff;
+         box-shadow: 0 0 0 2px rgba(0, 119, 255, 0.2);
+         outline-offset: toRem(2);
+      }
 
       @media (max-width: toEm(420)) {
         flex-direction: column;
@@ -450,13 +570,16 @@
 
    // .form-subscribe__input
    &__input {
+      width: 100%;
       background-color: $white;
       border-radius: toRem(5) toRem(0) toRem(0) toRem(5);
       padding-block: toRem(15);
       padding-left: toRem(20);
       font-size: toRem(14);
       letter-spacing: toRem(0.2);
-      transition: outline-offset 0.4s ;
+      outline: none;
+      height: toRem(58);
+
       &::placeholder {
          transition: opacity 0.3s;
          opacity: 1;
@@ -468,11 +591,6 @@
          }
       }
 
-      &:focus-visible {
-         // outline: none;
-         outline-offset: toRem(4);
-      }
-
       @media (max-width: toEm(420)) {
          border-radius: toRem(5);
       }
@@ -480,7 +598,7 @@
 
    // .form-subscribe__button
    &__button {
-
+      outline: none;
       @media (min-width: toEm(420)) {
          padding-inline: toRem(22);
 

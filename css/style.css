@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900);
 *,
 *::before,
@@ -765,6 +766,7 @@ html[data-input=mouse] .bottom-footer__link:hover {
 }
 .form-hero__button {
   width: 100%;
+  margin-top: 1.875rem;
 }
 
 .form-item {
@@ -845,9 +847,18 @@ html[data-input=mouse] .bottom-footer__link:hover {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  height: 3.125rem;
   color: rgb(115, 115, 115);
   outline: none;
   cursor: pointer;
+  background-color: #fff;
+}
+.form-item__select option {
+  color: #000;
+  font-weight: 500;
+}
+.form-item__select option:not(last-child) {
+  margin-bottom: 1.25rem;
 }
 .form-item__select:valid .form-item__icon::before {
   rotate: 180deg;
@@ -868,10 +879,15 @@ html[data-input=mouse] .bottom-footer__link:hover {
   padding-left: 1.3125rem;
   border-radius: 0.3125rem;
   outline: none;
-  -webkit-transition: border 0.4s, -webkit-box-shadow 0.3s ease;
-  transition: border 0.4s, -webkit-box-shadow 0.3s ease;
-  transition: box-shadow 0.3s ease, border 0.4s;
-  transition: box-shadow 0.3s ease, border 0.4s, -webkit-box-shadow 0.3s ease;
+  -webkit-transition: border 0.4s, opacity 0.4s, -webkit-box-shadow 0.3s ease;
+  transition: border 0.4s, opacity 0.4s, -webkit-box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, border 0.4s, opacity 0.4s;
+  transition: box-shadow 0.3s ease, border 0.4s, opacity 0.4s, -webkit-box-shadow 0.3s ease;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 3.125rem;
+  font-size: 0.875rem;
 }
 .form-item__input::-webkit-input-placeholder {
   font-size: 0.875rem;
@@ -927,6 +943,103 @@ html[data-input=mouse] .bottom-footer__link:hover {
   border: 0.0625rem solid rgb(35, 166, 240);
   -webkit-box-shadow: 0 0 0 2px rgba(221, 221, 221, 0.5);
           box-shadow: 0 0 0 2px rgba(221, 221, 221, 0.5);
+}
+
+input[type=time] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding-right: 0.9375rem;
+}
+
+.booking-container {
+  position: relative;
+}
+.booking-container__label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.0125rem;
+  color: rgb(37, 43, 66);
+  margin-bottom: 0.75rem;
+}
+.booking-container__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 0.625rem;
+}
+.booking-container__inner .form-item__icon {
+  translate: 0 0;
+}
+.booking-container__inner:focus-within .form-item__icon::before {
+  -webkit-transform: translateY(-50%) rotate(180deg);
+      -ms-transform: translateY(-50%) rotate(180deg);
+          transform: translateY(-50%) rotate(180deg);
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #fff;
+  -webkit-transition: border-color 0.3s;
+  transition: border-color 0.3s;
+}
+
+input[type=text]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.slots-dropdown {
+  display: none;
+  /* Приховано за замовчуванням */
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  z-index: 100;
+  border: 1px solid #eee;
+}
+
+.slots-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.1875rem;
+}
+
+.slot-btn {
+  padding: 0.25rem;
+  border: 1px solid #007bff;
+  background: transparent;
+  color: #007bff;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 500;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.slot-btn:hover {
+  background: #007bff;
+  color: white;
+}
+
+.slot-btn.busy {
+  border-color: #ccc;
+  color: #ccc;
+  cursor: not-allowed;
 }
 
 @media (min-width: 67.5em) {
@@ -1196,6 +1309,7 @@ html[data-input=mouse] .bottom-footer__link:hover {
 .form-subscribe {
   -ms-flex-preferred-size: 24.125rem;
       flex-basis: 24.125rem;
+  width: 100%;
 }
 @media (max-width: 43.4375em) {
   .form-subscribe {
@@ -1209,6 +1323,14 @@ html[data-input=mouse] .bottom-footer__link:hover {
   display: -ms-flexbox;
   display: flex;
   border-radius: 0.3125rem;
+  -webkit-transition: outline-offset 0.4s;
+  transition: outline-offset 0.4s;
+}
+.form-subscribe__form:focus-within {
+  outline: 0.125rem solid #0077ff;
+  -webkit-box-shadow: 0 0 0 2px rgba(0, 119, 255, 0.2);
+          box-shadow: 0 0 0 2px rgba(0, 119, 255, 0.2);
+  outline-offset: 0.125rem;
 }
 @media (max-width: 26.25em) {
   .form-subscribe__form {
@@ -1220,14 +1342,15 @@ html[data-input=mouse] .bottom-footer__link:hover {
   }
 }
 .form-subscribe__input {
+  width: 100%;
   background-color: #fff;
   border-radius: 0.3125rem 0rem 0rem 0.3125rem;
   padding-block: 0.9375rem;
   padding-left: 1.25rem;
   font-size: 0.875rem;
   letter-spacing: 0.0125rem;
-  -webkit-transition: outline-offset 0.4s;
-  transition: outline-offset 0.4s;
+  outline: none;
+  height: 3.625rem;
 }
 .form-subscribe__input::-webkit-input-placeholder {
   -webkit-transition: opacity 0.3s;
@@ -1269,13 +1392,13 @@ html[data-input=mouse] .bottom-footer__link:hover {
 .form-subscribe__input:focus::placeholder {
   opacity: 0;
 }
-.form-subscribe__input:focus-visible {
-  outline-offset: 0.25rem;
-}
 @media (max-width: 26.25em) {
   .form-subscribe__input {
     border-radius: 0.3125rem;
   }
+}
+.form-subscribe__button {
+  outline: none;
 }
 @media (min-width: 26.25em) {
   .form-subscribe__button {
@@ -1616,11 +1739,11 @@ html[data-input=mouse] .button--icon-arrow:hover::before {
   padding-inline: 2.25rem;
   border-radius: 2.3125rem;
 }
-.button--radius__white {
+.button--radius-white {
   background-color: transparent;
   border: 0.0625rem solid #fff;
 }
-html[data-input=mouse] .button--radius__white:hover {
+html[data-input=mouse] .button--radius-white:hover {
   background-color: rgb(35, 166, 240);
   color: #fff;
   border-color: rgb(35, 166, 240);
@@ -2233,8 +2356,10 @@ html[data-input=mouse] .menu-dropdown__item--submenu:hover > .menu-dropdown__sub
 }
 
 html[data-input=keyboard] > * :focus-visible {
-  outline: 0.125rem solid #000;
-  outline-offset: 0.25rem;
+  outline: 0.0625rem solid #0077ff;
+  -webkit-box-shadow: 0 0 0 2px rgba(0, 119, 255, 0.2);
+          box-shadow: 0 0 0 2px rgba(0, 119, 255, 0.2);
+  outline-offset: 0.125rem;
 }
 html[data-input=keyboard] .is-active .submenu-dropdowne {
   display: block;
