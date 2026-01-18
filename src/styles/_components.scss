@@ -498,23 +498,67 @@
 }
 
 
+// =====================================================
 .rating {
+   display: inline-flex;
+   flex-direction: row-reverse;
+   justify-content: flex-end;
+   border: none;
+   padding: 0;
+   margin: 0;
 
-   // .rating__items
-   &__items {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      gap: toRem(5);
-   }
-
-   // .rating__item
    &__item {
-      appearance: none;
+      // Повністю ховаємо радіокнопку візуально, але залишаємо для Tab
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      clip: rect(0 0 0 0);
+      overflow: hidden;
 
-      &::before {
-         color: $colorGold;
-         font-size: toRem(20);
+      // Стан фокусу (коли людина перемикається клавіатурою)
+      &:focus-visible+.rating__label {
+         outline: 2px solid gold;
+         outline-offset: 4px;
+         border-radius: 2px;
+      }
+
+      // Головна логіка: фарбуємо зірку та всі наступні лейбли (через row-reverse)
+      &:checked~.rating__label {
+         color: gold;
       }
    }
+
+   &__label {
+      cursor: pointer;
+      color: #ccc;
+      transition: color 0.2s ease-in-out,scale 0.4s ease;
+      padding: 0 2px;
+      will-change: scale;
+
+      // Встановлюємо іконку через псевдоелемент
+      &::before {
+         font-size: toRem(18);
+      }
+
+      // Ефект при наведенні мишкою
+      &:hover,
+      &:hover ~ .rating__label {
+         color: gold;
+      }
+      &:active {
+         scale: 0.9;
+      }
+   }
+
+   &__icon {
+      width: toRem(20);
+      aspect-ratio: 1;
+      fill: #ccc;
+   }
 }
+
+
+
+
+
