@@ -39,8 +39,8 @@
       }
    </style>
    <title>Medicine</title>
-  <script type="module" crossorigin src="/medicine/assets/main.bc260d33.js"></script>
-  <link rel="stylesheet" href="/medicine/assets/index.ecf9d8da.css">
+  <script type="module" crossorigin src="/medicine/assets/main.c269fd05.js"></script>
+  <link rel="stylesheet" href="/medicine/assets/index.b8035452.css">
 </head>
 
 <body>
@@ -95,6 +95,7 @@
                         <button type="button" class="button button--radius button--radius-white">Learn More</button>
                      </div>
                   </div>
+                  <!--
                   <article action="#" class="hero__form form-hero">
                      <h2 class="form-hero__title">Book Appointment</h2>
                      <form action="#" method="post" class="form-hero__form form-item">
@@ -105,27 +106,28 @@
                         <div class="form-item__wrapper">
                            <label for="name" class="form-item__label">Name *</label>
                            <input type="text" id="name" name="name" class="form-item__input" placeholder="Full Name * "
-                              required>
+                              required aria-required="true" autocomplete="name">
                         </div>
                         <div class="form-item__wrapper">
                            <label for="email" class="form-item__label">Email address *</label>
-                           <input type="text" name="email" id="email" class="form-item__input"
-                              placeholder="example@gmail.com " required>
+                           <input type="email" name="email" id="email" class="form-item__input"
+                              placeholder="example@gmail.com " required aria-required="true" autocomplete="email">
                         </div>
                         <div class="form-item__wrapper">
                            <label for="departement" class="form-item__label">Departement *</label>
                            <div class="form-item__body">
-                              <select class="form-item__select" name="departement" id="departement" required>
+                              <select class="form-item__select" name="departement" id="departement" required
+                                 aria-required="true">
                                  <option class="form-item__option form-item__option--icon-shevron" value="" disabled
                                     selected hidden>Please Select
                                  </option>
-                                 <option value="item-01">Emergency Department</option>
-                                 <option value="item-02">Cardiology</option>
-                                 <option value="item-03">Pediatrics</option>
-                                 <option value="item-02">Surgery</option>
-                                 <option value="item-02">Neurology</option>
+                                 <option value="emergency">Emergency Department</option>
+                                 <option value="cardiology">Cardiology</option>
+                                 <option value="pediatrics">Pediatrics</option>
+                                 <option value="surgery">Surgery</option>
+                                 <option value="neurology">Neurology</option>
                               </select>
-                              <span class="form-item__icon form-item__icon--icon-shevron"></span>
+                              <span class="form-item__icon form-item__icon--icon-shevron" aria-hidden="true"></span>
                            </div>
                         </div>
                         <div class="form-item__wrapper">
@@ -133,8 +135,8 @@
                               <label class="booking-container__label" for="appointment">Time *</label>
                               <div class="booking-container__inner">
                                  <input type="text" name="appointment" id="appointment" placeholder="4:00 Available"
-                                    readonly required>
-                                 <span class="form-item__icon form-item__icon--icon-shevron"></span>
+                                    readonly required aria-required="true">
+                                 <span class="form-item__icon form-item__icon--icon-shevron" aria-hidden="true"></span>
                               </div>
                               <div id="slots-dropdown" class="slots-dropdown">
                                  <div class="slots-grid" id="slots-grid">
@@ -143,7 +145,67 @@
                            </div>
                            <input type="hidden" name="selected_time" id="final-time">
                         </div>
-                        <button type="submit" class="form-hero__button button">Book Appointment</button>
+                        <button type="submit" class="form-item__button button">Book Appointment</button>
+                     </form>
+                  </article>
+                  -->
+                  <article class="hero__form form-hero">
+                     <form action="#" method="post" class="form-hero__form form-item">
+                        <fieldset class="form-item__inner">
+                           <legend class="form-item__title">Book Appointment</legend>
+                           <div class="hidden-field" style="display:none;" aria-hidden="true">
+                              <label for="_gotcha">Keep this field empty</label>
+                              <input type="text" name="_gotcha" id="_gotcha" tabindex="-1">
+                           </div>
+                           <div class="form-item__wrapper">
+                              <label for="name" class="form-item__label">Name *</label>
+                              <input type="text" id="name" name="name" class="form-item__input"
+                                 placeholder="Full Name * " required>
+                           </div>
+                           <div class="form-item__wrapper">
+                              <label for="email" class="form-item__label">Email address *</label>
+                              <input type="email" name="email" id="email" class="form-item__input"
+                                 placeholder="example@gmail.com " required>
+                           </div>
+                           <div class="form-item__wrapper">
+                              <label for="department" class="form-item__label">Department *</label>
+                              <div class="form-item__body form-item__body--select">
+                                 <select class="form-item__select" name="department" id="department" required>
+                                    <option class="form-item__option form-item__option--icon-shevron" value="" disabled
+                                       selected hidden>
+                                       Please
+                                       Select
+                                    </option>
+                                    <option value="emergency">Emergency Department</option>
+                                    <option value="cardiology">Cardiology</option>
+                                    <option value="pediatrics">Pediatrics</option>
+                                    <option value="surgery">Surgery</option>
+                                    <option value="neurology">Neurology</option>
+                                 </select>
+                                 <span class="form-item__icon form-item__icon--department form-item__icon--icon-shevron"
+                                    aria-hidden="true"></span>
+                              </div>
+                           </div>
+                           <div class="form-item__wrapper">
+                              <div class="booking-container" aria-expanded="false" role="combobox"
+                                 aria-haspopup="listbox">
+                                 <label class="form-item__label booking-container__label" for="appointment">Time
+                                    *</label>
+                                 <div class="form-item__body form-item__body--time booking-container__inner">
+                                    <input type="text" name="appointment" id="appointment"
+                                       aria-controls="slots-dropdown" placeholder="4:00 Available" readonly required>
+                                    <span class="form-item__icon form-item__icon--time form-item__icon--icon-shevron"
+                                       aria-hidden="true"></span>
+                                 </div>
+                                 <div id="slots-dropdown" role="listbox" class="slots-dropdown">
+                                    <div class="slots-grid" id="slots-grid">
+                                    </div>
+                                 </div>
+                              </div>
+                              <input type="hidden" name="selected_time" id="final-time">
+                           </div>
+                           <button type="submit" class="form-item__button button">Book Appointment</button>
+                        </fieldset>
                      </form>
                   </article>
                </div>
@@ -289,7 +351,7 @@
                         <div class="slider-review__slide swiper-slide">
                            <article class="item-review">
                               <div class="item-review__inner">
-                                 <form action="#" class="item-review__rating rating">
+                                 <form action="#" class="item-review__rating">
                                     <fieldset class="rating">
                                        <legend class="visually-hidden">Оцініть товар</legend>
                                        <input class="rating__item" type="radio" id="star5" name="r" value="5">
@@ -318,13 +380,13 @@
                                        </label>
                                     </fieldset>
                                  </form>
-                                 <div class="body-reviews__text">
+                                 <div class="item-reviews__text">
                                     <p>Slate helps you see how many
                                        more days you need to work to
                                        reach your financial goal.
                                     </p>
                                  </div>
-                                 <figure class="body-reviews__author">
+                                 <figure class="item-reviews__author">
                                     <img src="data:image/webp;base64,UklGRoYDAABXRUJQVlA4WAoAAAAQAAAAMQAAMQAAQUxQSNQAAAABcFLbVm0de0OgT4gbhyaEwKPReELgCXE85/0f7F0gIhi4baQo2T1mmJk3yIYac5+2ls2eo8q5mob/cSQ9466+Zb33CcW3LWGTaH6gxS2yH5r/czU/tl3/eneA/U9rDrHt7YHbITrM7/MEw2Hhk+JAy+cn6VDvNxVLFRF1sCqS0CSRgWbg59014okZT+54+sQzDY8tPIsBY4axCeNAjC+H8XUy/gDCX8b4kxnRghCRGFGPEFkZ0ZuQIQhZiJDpGNmUkLHxVQGh8iBUN/gKil6lESpBAVZQOCCMAgAA8AwAnQEqMgAyAD6RPplKJaMiIaoWauiwEglAGdyMchlx7JVeelpBQaD2IkWtV1NpSNl/vg9RrdiEua4HdcFGCtHAttwkPXEsnMrfLjBYbLxLXnhBHZsdzZdlqVKmlckvP74lLX9lIm/ceC3PveSaAAD+/fj3iLXjLCwzgo+RyS17cO3BufPKaDA+QGBkpx3lkECpf1hBDA0Pu5iS8ws8gPTzI5AUjugieiNO2LK8A0RkJ7d/lOHp//6F1lhzVE/U3CZ99ifZ4YHc25Xs/NvNbgmqPAWUl/q/CABpgp1HST2gE9d2NP958nvSqXGWeI2EYstLKYa85KnPdNRbzV/mtyb3yLZ///GJGzh9H3/tIxi4IIcj4a6Hu1GDk21LUzGSeE296Zi4xNOZtGzH7sBnZ2Z+LUf+2nJcsPa5/iZptoi418eNouOPDSU2JzGuUrZNofMF32xxigr6C376Eh8unVvCTjV/1gDhjtmoy6X2nJEjX8/hzNLcQ8X5iD/PmEu2d77+xA+cVokIi2jBSJd1sARSpWgW6MVloRHfUyUHLNJ9NO9nbhYugDRnOMyfxpK5qfYr7SjcDoWriW34Yro3a27d/yr92dJSNnjaaNK8L207j7ATCg/dpcb1RnIVqMIw92Y2D9at5yCpidu0EwnxEQSYOXBCXjP4qOuTSzEhMICnxWrdwbUYfwNSF05YpX+iVwgUhwl3dI2wg/WhZlUa8eXXfuXe/qm4ZAFUBuFlm6ZUJ1i8CntC2zkwdzHuMj4Oa/Is8kl4W+UtjG6Q5TcU//7TRf//x9TL30IfnLf//b+8fFkzTpIqDDkD9mJiogB7gebqkeL5q/Lub+1c//9ZLaLXk5ttKNHIAAAAAA==" alt="avathar image">
                                  </figure>
                               </div>
@@ -333,7 +395,7 @@
                         <div class="slider-review__slide swiper-slide">
                            <article class="item-review">
                               <div class="item-review__inner">
-                                 <form action="#" class="item-review__rating rating">
+                                 <form action="#" class="item-review__rating">
                                     <fieldset class="rating">
                                        <legend class="visually-hidden">Оцініть товар</legend>
                                        <input class="rating__item" type="radio" id="s5" name="r" value="5">
@@ -362,13 +424,13 @@
                                        </label>
                                     </fieldset>
                                  </form>
-                                 <div class="body-reviews__text">
+                                 <div class="item-reviews__text">
                                     <p>Slate helps you see how many
                                        more days you need to work to
                                        reach your financial goal.
                                     </p>
                                  </div>
-                                 <figure class="body-reviews__author">
+                                 <figure class="item-reviews__author">
                                     <img src="data:image/webp;base64,UklGRnQDAABXRUJQVlA4WAoAAAAQAAAAMQAAMQAAQUxQSNQAAAABcFLbVm0de0OgT4gbhyaEwKPReELgCXE85/0f7F0gIhi4baQo2T1mmJk3yIYac5+2ls2eo8q5mob/cSQ9466+Zb33CcW3LWGTaH6gxS2yH5r/czU/tl3/eneA/U9rDrHt7YHbITrM7/MEw2Hhk+JAy+cn6VDvNxVLFRF1sCqS0CSRgWbg59014okZT+54+sQzDY8tPIsBY4axCeNAjC+H8XUy/gDCX8b4kxnRghCRGFGPEFkZ0ZuQIQhZiJDpGNmUkLHxVQGh8iBUN/gKil6lESpBAVZQOCB6AgAA8AsAnQEqMgAyAD6RPJpKJaMiIaYaq7CwEglAXAAhkn32B00LXFut1tfA7WR/fY/T+bI/V7Ns2i6l/u4259A2IEW+ZtNDU9aKUQ09fKWXsCfPD4w3rj/qmee+tqGGTCLYJR5n6exrrwAA/vzW1v3rwEwruiTBbR65JQxpYvUusn5/mtBriBYKbJ70kYHoiAd/iXYK8C/fiOId2D66p4GXqVsenG+36xYlPR3O4AZp57D7EOZVswW7Ex4rjPI3y38/uMkQpscXtSIHAIz0KGR1plsuyAjS/X9vIIcUuCTVftTw1MMY8e2lf5XNQXWWJG6sjjjbi4EO8L9+Ann4yqvCzv/5VYAAR7YTG8Hhc8AuDn2r0x5xc+VryL17jidFbNlJPN10PeHhoRSJ8f1D8xvdsIoZ1io1Z2CyeYB8C2EOFfqhLgvkQLZddLTsP+o0949MZsmJBd/xmceYR01EWZm+z8kEuimw3nsWt4gE5JvUHzgCGFsgeSOrKBOy7hETTephfP8YNXDKsr88gZesgbJTNOJq6pRuXJBSIUOERbyVaOi7VZXLQbXr9RWVd9vaCtlbhMAFJZd/PPglJyA78CnRSP24Qd4PGd3qAeqju3PaJT1GM8VylpZDBVwUM15CSrYhzpKkJuTNjBA6lV9BHVpV8nmVSaq9IvIRfGPITes9uxL1ST5Y6D+jHonMS4okKflWCta787kbGuhi3FWjj2hdNTdf9mY/Ff1PhSqbofoFwZyO2V9wLYP6RmCBJbr0zIn2yf++Nf/8iB1XBB7MSZR/cItdSV++8Tq3zPf//jbBFIbxsHxXA7uLhcBXYqf/fqf//oGsk2UiYAAAAA==" alt="avathar image">
                                  </figure>
                               </div>
@@ -377,7 +439,7 @@
                         <div class="slider-review__slide swiper-slide">
                            <article class="item-review">
                               <div class="item-review__inner">
-                                 <form action="#" class="item-review__rating rating">
+                                 <form action="#" class="item-review__rating">
                                     <fieldset class="rating">
                                        <legend class="visually-hidden">Оцініть товар</legend>
                                        <input class="rating__item" type="radio" id="star5s" name="r" value="5">
@@ -406,13 +468,13 @@
                                        </label>
                                     </fieldset>
                                  </form>
-                                 <div class="body-reviews__text">
+                                 <div class="item-reviews__text">
                                     <p>Slate helps you see how many
                                        more days you need to work to
                                        reach your financial goal.
                                     </p>
                                  </div>
-                                 <figure class="body-reviews__author">
+                                 <figure class="item-reviews__author">
                                     <img src="data:image/webp;base64,UklGRiIDAABXRUJQVlA4WAoAAAAQAAAAMQAAMQAAQUxQSNQAAAABcFLbVm0de0OgT4gbhyaEwKPReELgCXE85/0f7F0gIhi4baQo2T1mmJk3yIYac5+2ls2eo8q5mob/cSQ9466+Zb33CcW3LWGTaH6gxS2yH5r/czU/tl3/eneA/U9rDrHt7YHbITrM7/MEw2Hhk+JAy+cn6VDvNxVLFRF1sCqS0CSRgWbg59014okZT+54+sQzDY8tPIsBY4axCeNAjC+H8XUy/gDCX8b4kxnRghCRGFGPEFkZ0ZuQIQhZiJDpGNmUkLHxVQGh8iBUN/gKil6lESpBAVZQOCAoAgAA0AsAnQEqMgAyAD6ROpdJJaMqIS4UnVFAEglkAMH6rvKRnAednpqvPd+xyjdYk2tzm1i2l7gvOe/eB9qRSIER4byM05mvUO+4Yljp7YjkVf+FizMoK9+Dgf3KeHnwqJ7tKHvy+6/AAAD9HAzLtikJqQ8aaxn/bd3/+ZlHwxSL0PtzVlbny5hezb6qVMzehxUEae6Abdx3LaE0UV0VIoQy8ARPyjg8B+XDsJqhEU4f3buVoQ6tqBr3fSIcNHw4gF3DW+y6bcdyQdlDjve9Fvcs0EPtOsRRCUiRLEcMmFxOvaqu8TYeEOa1Zf37cT7iUexkKnyhXalR9N6XmJu30NLEzZ++Nn//1rb5en77+yHQRxee/pDkgJ3TdgeAGSAkay/iaHuaEkPnSXVuiCZU4LN70r+CtKeXUH+7CdKVdoD03OaP5Vdq4WzAl7i0GrpmnmZtUtEnqb3l+Xu2Q7KdecFsWse84BabssS0JY1AfVRQ3Qe4pCla+zDIaKgDVjtp1/wEInwQldz+42gefTU62JpbtiRb+qp7d2vV122C0Vphkq7f4OBcQff3v+lGKn8/0PfabHDyjL2/9JvOofwQ4EETRUwWvxa4JiwbCUGoq/LqtdLy8b1oqvn5uQmfpRVgtrvnIhIg5JRsvCDjLL+9KufUHpmxR/4B5//+uLMbEwGzkuEEbkK3ij//8baSTgpo0ldFGcriTBRN0W+z/8KP//8XC0uhUxZeAAAA" alt="avathar image">
                                  </figure>
                               </div>
@@ -421,7 +483,7 @@
                         <div class="slider-review__slide swiper-slide">
                            <article class="item-review">
                               <div class="item-review__inner">
-                                 <form action="#" class="item-review__rating rating">
+                                 <form action="#" class="item-review__rating">
                                     <fieldset class="rating">
                                        <legend class="visually-hidden">Оцініть товар</legend>
                                        <input class="rating__item" type="radio" id="star55" name="r" value="5">
@@ -450,13 +512,13 @@
                                        </label>
                                     </fieldset>
                                  </form>
-                                 <div class="body-reviews__text">
+                                 <div class="item-reviews__text">
                                     <p>Slate helps you see how many
                                        more days you need to work to
                                        reach your financial goal.
                                     </p>
                                  </div>
-                                 <figure class="body-reviews__author">
+                                 <figure class="item-reviews__author">
                                     <img src="data:image/webp;base64,UklGRiIDAABXRUJQVlA4WAoAAAAQAAAAMQAAMQAAQUxQSNQAAAABcFLbVm0de0OgT4gbhyaEwKPReELgCXE85/0f7F0gIhi4baQo2T1mmJk3yIYac5+2ls2eo8q5mob/cSQ9466+Zb33CcW3LWGTaH6gxS2yH5r/czU/tl3/eneA/U9rDrHt7YHbITrM7/MEw2Hhk+JAy+cn6VDvNxVLFRF1sCqS0CSRgWbg59014okZT+54+sQzDY8tPIsBY4axCeNAjC+H8XUy/gDCX8b4kxnRghCRGFGPEFkZ0ZuQIQhZiJDpGNmUkLHxVQGh8iBUN/gKil6lESpBAVZQOCAoAgAA0AsAnQEqMgAyAD6ROpdJJaMqIS4UnVFAEglkAMH6rvKRnAednpqvPd+xyjdYk2tzm1i2l7gvOe/eB9qRSIER4byM05mvUO+4Yljp7YjkVf+FizMoK9+Dgf3KeHnwqJ7tKHvy+6/AAAD9HAzLtikJqQ8aaxn/bd3/+ZlHwxSL0PtzVlbny5hezb6qVMzehxUEae6Abdx3LaE0UV0VIoQy8ARPyjg8B+XDsJqhEU4f3buVoQ6tqBr3fSIcNHw4gF3DW+y6bcdyQdlDjve9Fvcs0EPtOsRRCUiRLEcMmFxOvaqu8TYeEOa1Zf37cT7iUexkKnyhXalR9N6XmJu30NLEzZ++Nn//1rb5en77+yHQRxee/pDkgJ3TdgeAGSAkay/iaHuaEkPnSXVuiCZU4LN70r+CtKeXUH+7CdKVdoD03OaP5Vdq4WzAl7i0GrpmnmZtUtEnqb3l+Xu2Q7KdecFsWse84BabssS0JY1AfVRQ3Qe4pCla+zDIaKgDVjtp1/wEInwQldz+42gefTU62JpbtiRb+qp7d2vV122C0Vphkq7f4OBcQff3v+lGKn8/0PfabHDyjL2/9JvOofwQ4EETRUwWvxa4JiwbCUGoq/LqtdLy8b1oqvn5uQmfpRVgtrvnIhIg5JRsvCDjLL+9KufUHpmxR/4B5//+uLMbEwGzkuEEbkK3ij//8baSTgpo0ldFGcriTBRN0W+z/8KP//8XC0uhUxZeAAAA" alt="avathar image">
                                  </figure>
                               </div>
@@ -861,19 +923,6 @@
             </div>
          </div>
       </footer>
-   </div>
-
-
-   <!-- modal-overlay -->
-   <div id="modal-overlay" class="modal-overlay">
-      <div id="modal-content" class="modal-window">
-      </div>
-   </div>
-
-   <div id="status-overlay" class="status-overlay">
-      <div class="status-modal-content">
-         <p id="status-text"></p>
-      </div>
    </div>
 
    <div id="app"></div>
