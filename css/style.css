@@ -868,7 +868,7 @@ input:focus {
   outline: none;
   cursor: pointer;
   background-color: #fff;
-  font-size: 1rem;
+  font-size: 0.875rem;
   letter-spacing: 0.0125rem;
 }
 .form-item__select option {
@@ -1741,6 +1741,8 @@ html[data-input=mouse] .button:hover {
       -ms-flex-align: center;
           align-items: center;
   gap: 0.9375rem;
+  -webkit-transition: translate 0.4s ease-out;
+  transition: translate 0.4s ease-out;
 }
 @media (min-width: 67.5em) {
   .button--icon-arrow {
@@ -1758,11 +1760,12 @@ html[data-input=mouse] .button:hover {
   }
 }
 html[data-input=mouse] .button--icon-arrow:hover::before {
-  -webkit-animation: arrowMove 0.6s ease-in-out infinite;
-          animation: arrowMove 0.6s ease-in-out infinite;
+  translate: 0.3125rem 0;
 }
 .button--icon-arrow::before {
   font-size: 0.625rem;
+  -webkit-transition: translate 0.4s ease-out;
+  transition: translate 0.4s ease-out;
 }
 .button--radius {
   padding-inline: 2.25rem;
